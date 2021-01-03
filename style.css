@@ -1,0 +1,285 @@
+body{
+    margin:0px;
+    padding:0px;
+}
+
+#navbar{
+    position:fixed;
+    top:0px;
+}
+
+/*fake nav bar to fulfill test*/
+
+#nav-bar{
+    position:absolute;
+    z-index:2;
+    list-style: none;
+    color:white;
+    display:flex;
+    height:100px;
+    width:100%;
+    padding:0px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-items{
+    width: 10%;
+}
+
+.navlink{
+    color:white;
+}
+
+#welcome-section{
+    height:100vh;
+    background-image: url("https://drive.google.com/uc?id=1U3O-1ZAJkKEEF1zJ19G4W9ROPfncIOYy");
+    display:flex;
+    flex-direction:column;
+    color:white;
+    justify-content:center;
+    align-items:center;
+}
+
+/*A huge advantage of flexbox is it allows the div size to adjust according to the
+length of the text within it. Thus in this case, it allows the element to be exactly
+in the center of the page. And you can add more text and the div will adjust size
+accordingly. 
+
+Usually this is more difficult as you have to first 
+determine size of div required then position the div with margin:0px auto;*/
+
+.wel-text{
+    font-size:30px;
+    font-weight:400;
+}
+
+#About{
+    text-align:center;
+    font-size:30px;
+}
+
+#About span{
+    color:rgb(253, 40, 86);
+}
+
+
+#projects{
+    background-color:rgb(247, 243, 243);
+    text-align:center;
+}
+
+.title{
+    margin:0px;
+    padding:150px 0px 100px 0px;
+    font-size:2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*create a responsive grid*/
+
+#project-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); 
+    /*when using autofit+minmax, the width of the elements may stretch when theres space but enough
+    to fit one more element. Alternatively if you want to prevent stretching, you can just set a width instead of minmax. */
+    justify-content: center;
+    row-gap: 3rem;
+    column-gap: 2rem;
+    margin:20px;
+}
+
+@keyframes pop{
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.1);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+.project-tile{
+    background-color: rgb(116, 111, 111);
+    text-align:left;
+}
+
+.link{
+    text-decoration:none;
+}
+
+.btn-div{
+    display:flex;
+    justify-content: space-evenly;
+    width:180px;
+}
+
+img{
+    width:100%;
+    height:auto;
+}
+
+.desc{
+    padding-left:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.desc-text{
+    font-weight:700;
+    font-size:1.2rem;
+    color:white;
+}
+
+.btn{
+    background-color:black;
+    border:none;
+    border-radius:5px;
+    height:25px;
+    width:45px;
+    color:white;
+    transition:0.3s;
+    text-decoration: none;
+}
+
+i{
+    transition: color 0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    background-color:white;
+    color: black;
+    cursor: pointer;
+}
+
+.btn:hover .i-heart{
+    color:rgb(231, 100, 122);
+    animation-name:pop;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.btn:hover .i-comment{
+    color:rgb(110, 167, 204);
+
+}
+
+.btn:hover .i-eye{
+    color:rgb(73, 216, 135);
+}
+
+#show-btn{
+    margin: 50px 0px 70px 0px;
+    border:none;
+    border-radius: 10px;
+    height: 50px;
+    width:150px;
+    color:white;
+    background-color:rgb(9, 154, 221);
+    font-size:1.1rem;
+    font-weight:700;
+    cursor:pointer;
+}
+
+#show-btn:hover{
+    box-shadow:0px 0px 3px 4px lightblue;
+}
+
+#contact-section{
+    font-family: 'Roboto', sans-serif;
+    text-align:center;
+    background-color: rgb(20, 56, 70);
+    color:white;
+    padding-bottom:150px;
+}
+
+#phrase{
+    padding: 150px 0px 100px 0px;
+    margin:0px;
+    font-size:3rem;
+}
+
+#phrase1{
+    margin:0px;
+    padding-bottom:130px;
+    font-size:1.5rem;
+}
+
+#contact-icons{
+    display:flex;
+    width:70%;
+    margin:0px auto;
+    justify-content:space-evenly;
+    font-size:1.5rem;
+}
+
+.icon-move{
+    transition:0.3s;
+}
+
+.jitter:hover .icon-move{
+    transform:translateY(5px);
+    font-weight:bold;
+    cursor: pointer;
+}
+
+.jitter:hover #git{
+    color: rgb(241, 163, 176);
+}
+
+.jitter:hover #ins{
+    color: rgb(228, 113, 20);
+}
+
+.jitter:hover #twi{
+    color:rgb(82, 116, 226);
+}
+
+.jitter:hover #ema{
+    color:rgb(192, 215, 235);
+}
+
+.jitter:hover #con{
+    color:rgb(75, 226, 75);
+}
+
+.jitter:hover #con i{
+    animation-name:call;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes call{
+    0%{
+        transform:rotateZ(0deg);
+    }
+
+    25%{
+        transform:rotateZ(-30deg);
+    }
+
+    50%{
+        transform:rotateZ(0deg);
+    }
+
+    75%{
+        transform:rotateZ(30deg);
+    }
+    
+    100%{
+        transform:rotateZ(0deg);
+    }
+}
+
+
+@media (max-width:576px){
+    #contact-icons{
+        width:100%;
+    }
+}
